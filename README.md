@@ -1,54 +1,44 @@
-# Astro Starter Kit: Basics
+# Bus Ticket Elite
 
-```sh
-npm create astro@latest -- --template basics
-```
+## Description
+Bus Ticket Elite is a web application that allows users to book bus tickets online. It provides a convenient and hassle-free way to search for bus routes, check seat availability, and make reservations.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Features
+- Search for bus routes based on origin and destination
+- View available bus schedules and seat availability
+- Select preferred seats and book tickets
+- Manage bookings and view ticket details
+- Cancel or modify existing bookings
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Installation
+1. Clone the repository: `git clone https://github.com/your-username/bus-ticket-elite.git`
+2. Install dependencies: `npm install`
+3. Start the application: `npm start`
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## Usage
+1. Open the application in your web browser.
+2. Sign up or log in to your account.
+3. Use the search feature to find bus routes.
+4. Select a bus schedule and choose your preferred seats.
+5. Proceed to the checkout page and make the payment.
+6. Receive your e-ticket and confirmation details.
 
-## 🚀 Project Structure
+## Technologies Used
+- HTML
+- CSS
+- JavaScript
+- Node.js
+- Express.js
+- MongoDB
+- Astro
+- React
+- Tailwind 
 
-Inside of your Astro project, you'll see the following folders and files:
+## Contributing
+Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## License
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Contact
+For any inquiries or support, please contact us at bus-ticket-elite@example.com.
