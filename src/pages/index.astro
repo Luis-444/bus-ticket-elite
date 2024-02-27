@@ -1,0 +1,14 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Seller from '../components/Seller.tsx';
+import Footer from '../components/Footer.vue';
+---
+
+<Layout title="Welcome to Astro.">
+	<Header title="Home page" />
+	<main class="bg-green-500 text-3xl">
+		<Seller />
+	</main>
+	<Footer/>
+</Layout>
