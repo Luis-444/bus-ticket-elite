@@ -5,6 +5,7 @@ import {
   TextInput,
 } from 'flowbite-react';
 import { useState } from 'react';
+import axiosClient from '../axiosClient';
 
 export default function LoginForm() {
   //send rwequest to server to login
@@ -12,27 +13,16 @@ export default function LoginForm() {
   const [password, setPassword] = useState('');
 
   const handleLogin = () => {
-    console.log('username:', username);
-    console.log('password:', password);
-    fetch('http://localhost:3000/api/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ username, password })
-    })
-    .then(response => {
-      if(response.ok){
-        return response.json();
+    axiosClient.post('/login', { username, password }).then(response => {
+      if(!response.data.error){
+        window.location.href = '/';
       }
-      throw new Error('Network response was not ok.');
-    })
-    .then(data => {
-      console.log('Success:', data);
-      localStorage.setItem('user', JSON.stringify(data));
-      window.location.href = '/';
-    })
-    .catch(error => console.error('Error:', error));
+      else{
+        console.error(response.data.message);
+      }
+    }).catch(error => {
+      console.error(error);
+    });
   }
 
   return (

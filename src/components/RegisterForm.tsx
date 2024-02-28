@@ -5,6 +5,7 @@ import {
     TextInput,
   } from 'flowbite-react';
   import { useState } from 'react';
+  import axiosClient from '../axiosClient';
   
   export default function LoginForm() {
 
@@ -14,25 +15,16 @@ import {
     const [confirmPassword, setConfirmPassword] = useState('');
   
     const register = () => {
-      fetch('http://localhost:3000/api/register', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ username, password, confirmPassword })
-      })
-        .then(response => {
-            if(response.ok){
-            return response.json();
-            }
-            throw new Error('Network response was not ok.');
-        })
-        .then(data => {
-            console.log('Success:', data);
-            localStorage.setItem('user', JSON.stringify(data));
-            window.location.href = '/';
-        })
-        .catch(error => console.error('Error:', error));
+      axiosClient.post('/register', { username, password, confirmPassword }).then(response => {
+        if(!response.data.error){
+          window.location.href = '/';
+        }
+        else{
+          console.error(response.data.message);
+        }
+      }).catch(error => {
+        console.error(error);
+      });
     }
   
     return (
