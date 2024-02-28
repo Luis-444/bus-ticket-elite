@@ -1,7 +1,6 @@
 <template>
     <div class="space-x-2">
         <a target="_blanck" class="text-blue-500" v-for="net in social_nets" :key="net" :href="net.link">{{ net.name }}</a>
-        
     </div>
 </template>
 <script setup>
