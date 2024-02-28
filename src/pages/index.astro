@@ -1,17 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
-import Seller from '../components/Seller.tsx';
-import Footer from '../components/Footer.vue';
 import Form from '../components/Form.tsx';
 ---
 
-<Layout title="Welcome to Astro.">
-	<Header title="Home page" />
-	<Form/>
+<Layout title="tickets">
+	<Header title="Compra de boletos UTM" />
+	<Form client:load/>
 	<main class="bg-green-500 text-3xl">
-		<Seller />
-		<p>Welcome to Astro 2.</p>
 	</main>
-	<Footer/>
 </Layout>
