@@ -1,0 +1,9 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PurchasedTickets from "../components/ViewPurchases";
+---
+
+<Layout title="Boletos comprados">
+    <PurchasedTickets client:load></PurchasedTickets>
+    <p>Aqui se veran los boletos comprados</p>
+</Layout>
