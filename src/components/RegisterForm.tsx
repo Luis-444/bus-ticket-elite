@@ -15,12 +15,13 @@ import {
     const [confirmPassword, setConfirmPassword] = useState('');
   
     const register = () => {
-      axiosClient.post('/register', { username, password, confirmPassword }).then(response => {
-        if(!response.data.error){
-          window.location.href = '/';
+      axiosClient.post('/register', { username, password, confirmPassword }).then(({data}) => {
+        if(!data.error){
+          localStorage.setItem('user', JSON.stringify(data));
+          window.location.href = '/cards/add';
         }
         else{
-          console.error(response.data.message);
+          console.error(data.message);
         }
       }).catch(error => {
         console.error(error);
