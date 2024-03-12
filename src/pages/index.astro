@@ -5,15 +5,22 @@ import { Button } from "flowbite-react";
 ---
 
 <Layout title="tickets">
-	<Header title="Compra de boletos UTM" />
-	<a href="/purchase">
-		<Button>Compra de boletos</Button>
-	</a>
-	<a href="/view_purchases">
-		<Button>Voletos Comprados</Button>
-	</a>
-	<!-- <Form client:load/> -->
-	<main class="bg-green-500 text-3xl"></main>
+	<div class="h-screen justify-between flex flex-col">
+		<picture>
+			<img class="h-[500px] w-[500px]" src="public/imgs/Quality.png" alt="">
+		</picture>
+		<div>
+			<Header title="Compra de boletos UTM" />
+			<a href="/purchase">
+				<Button>Compra de boletos</Button>
+			</a>
+			<a href="/view_purchases">
+				<Button>Voletos Comprados</Button>
+			</a>
+		</div>
+		<div>
+		</div>
+	</div>
 </Layout>
 
 
