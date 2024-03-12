@@ -1,12 +1,19 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Form from '../components/Form.tsx';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import { Button } from "flowbite-react";
 ---
 
 <Layout title="tickets">
 	<Header title="Compra de boletos UTM" />
-	<Form client:load/>
-	<main class="bg-green-500 text-3xl">
-	</main>
+	<a href="/purchase">
+		<Button>Compra de boletos</Button>
+	</a>
+	<a href="/view_purchases">
+		<Button>Voletos Comprados</Button>
+	</a>
+	<!-- <Form client:load/> -->
+	<main class="bg-green-500 text-3xl"></main>
 </Layout>
+
+
