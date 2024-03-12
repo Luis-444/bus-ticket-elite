@@ -2,25 +2,19 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import { Button } from "flowbite-react";
+import PrincipalButton from "../components/PrincipalButton.astro";
+import { TicketIcon, CurrencyDollarIcon } from "@heroicons/react/24/outline";
 ---
 
 <Layout title="tickets">
-	<div class="h-screen justify-between flex flex-col">
-		<picture>
-			<img class="h-[500px] w-[500px]" src="public/imgs/Quality.png" alt="">
-		</picture>
-		<div>
-			<Header title="Compra de boletos UTM" />
-			<a href="/purchase">
-				<Button>Compra de boletos</Button>
-			</a>
-			<a href="/view_purchases">
-				<Button>Voletos Comprados</Button>
-			</a>
-		</div>
-		<div>
-		</div>
+	<div class="grid grid-cols-1 sm:grid-cols-2 gap-10">
+		<PrincipalButton href="purchase">
+			<CurrencyDollarIcon className="" />
+				Compra de boletos
+		</PrincipalButton>
+		<PrincipalButton href="view_purchases">
+			<TicketIcon className="" />
+				Boletos comprados
+		</PrincipalButton>
 	</div>
 </Layout>
-
-

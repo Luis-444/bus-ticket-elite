@@ -5,7 +5,7 @@ export default function ProfileMenu() {
     const [menu, setMenu] = useState(false);
     return (
         <section className="absolute top-0 right-0 w-full flex justify-end">
-            <UserCircleIcon onClick={ e => setMenu(!menu) } className="w-10 m-2 hover:scale-110 cursor-pointer hover:text-gray-950 transition-all duration-300" />
+            <UserCircleIcon onClick={ e => setMenu(!menu) } className="w-10 m-2 hover:scale-110 cursor-pointer taxt-gray-300 hover:text-white transition-all duration-300" />
             {menu && (
                 <nav className="bg-gray-100 m-2 p-2 rounded-md shadow absolute right-0 top-[45px] w-full max-w-[200px]">
                     <ul className="p-2 grid gap-2">

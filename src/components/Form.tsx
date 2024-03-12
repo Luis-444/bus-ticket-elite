@@ -6,7 +6,17 @@ import axios from 'axios';
 import QRCode from 'qrcode.react';
 
 export default function Form() {
-  const [deadline, setDeadline] = useState('');
+
+  const getDeadline = () => {
+    var today = new Date();
+    var todayInt = today.getDay();
+    var deadlineInt = 6 - todayInt;
+    today.setDate(today.getDate() + deadlineInt);
+    console.log(today);
+    return today;
+  }
+
+  const [deadline, setDeadline] = useState(getDeadline());
   const [city, setCity] = useState('Matamoros');
   const [price, setPrice] = useState(10);
   const [quantity, setQuantity] = useState(1);
@@ -46,51 +56,40 @@ export default function Form() {
   }
 
   return (
-    <div className="flex max-w-md flex-col gap-4">
+    <div className="flex max-w-md flex-col gap-4 p-4">
       <div>
-        <TextInput id="base" type="date" sizing="md" value={deadline} onChange={e => setDeadline(e.target.value)} />
+        <Label className='text-xl'>Fecha limite de uso {deadline.toLocaleDateString('es-ES', {
+          day: '2-digit', // Día con dos dígitos
+          month: 'long', // Mes en letra completa
+          year: 'numeric' // Año con cuatro dígitos
+        })}</Label>
       </div>
-      <div className="flex">
-        <div className="w-3/4">
-          <div className="max-w-md">
-            <div className="mb-2 block">
-              <Label htmlFor="small" value="Selecciona la ciudad" />
-            </div>
-            <Select id="cities" required value={city} onChange={e => changeCity(e.target.value)}>
-              <option value={'Matamoros'}>Matamoros</option>
-              <option value={'Valle Hermoso'}>Valle Hermoso</option>
-            </Select>
-          </div>
+      <section className='grid grid-cols-5 gap-2'>
+        <div className='col-span-3'>
+          <Label className='text-xs md:taxt-base' htmlFor="small" value="Selecciona la ciudad" />
+          <Select id="cities" required value={city} onChange={e => changeCity(e.target.value)}>
+            <option value={'Matamoros'}>Matamoros</option>
+            <option value={'Valle Hermoso'}>Valle Hermoso</option>
+          </Select>
         </div>
-        <div className="w1/4">
-          <div>
-            <div className="mb-2 block">
-              <Label htmlFor="large" value="Precio Unitario" />
-            </div>
-            <TextInput id="large" type="number" sizing="md" value={price} disabled />
-          </div>
+        <div className='col-span-2'>
+          <Label className='text-xs md:taxt-base' htmlFor="large" value="Precio Unitario" />
+          <TextInput id="large" type="number" sizing="md" value={price} disabled />
         </div>
-      </div>
-      <div className="flex">
-        <div className="w-3/4">
-          <div>
-            <div className="mb-2 block">
-              <Label htmlFor="small" value="Ingresa la cantidad de boletos" />
-            </div>
-            <TextInput id="small" type="number" sizing="md" value={quantity} onChange={e => changeQuantity(Number(e.target.value))} />
-          </div>
+        <div className='col-span-3'>
+          <Label className='text-xs md:taxt-base' htmlFor="small" value="Ingresa la cantidad de boletos" />
+          <TextInput id="small" type="number" sizing="md" value={quantity} onChange={e => changeQuantity(Number(e.target.value))} />
         </div>
-        <div className="w1/4">
-          <div>
-            <div className="mb-2 block">
-              <Label htmlFor="large" value="Precio Total a pagar" />
-            </div>
-            <TextInput id="large" type="number" sizing="md" value={total} disabled />
-          </div>
+        <div className='col-span-2'>
+          <Label className='text-xs md:taxt-base' htmlFor="large" value="Precio Total" />
+          <TextInput id="large" type="number" sizing="md" value={total} disabled />
         </div>
-      </div>
-      <div className="mb-2 block">
-        <Button className="bg-red-500" onClick={savePurchase}>Comprar</Button>
+      </section>
+      <div className="flex justify-end gap-2 items-center">
+        <Button className="bg-primary-hover w-full md:w-auto" onClick={savePurchase}>Comprar</Button>
+        <a className='w-full md:w-auto' href="/">
+          <Button color='red' className='w-full md:w-auto'>Regresar</Button>
+        </a>
       </div>
       <div className="mb-2 block">
         {folio ? <QRCode value={folio} size={200} /> : null}

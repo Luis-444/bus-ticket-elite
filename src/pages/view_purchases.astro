@@ -4,6 +4,7 @@ import PurchasedTickets from "../components/ViewPurchases";
 ---
 
 <Layout title="Boletos comprados">
-    <PurchasedTickets client:load></PurchasedTickets>
-    <p>Aqui se veran los boletos comprados</p>
+    <div class="flex flex-col gap-4">
+        <PurchasedTickets client:load></PurchasedTickets>
+    </div>
 </Layout>
