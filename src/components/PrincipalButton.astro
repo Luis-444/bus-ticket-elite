@@ -4,6 +4,6 @@ const href = Astro.props.href;
 
 ---
 
-<a class="text-primary-text px-10 py-4 rounded-md border-black bg-secondary shadow-xl" href={href}>
+<a class="text-primary-text hover:text-secondary bg-transparent hover:bg-primary-hover transition-all hover:scale-105 duration-300 px-10 py-4 rounded-md border-black bg-secondary shadow-xl" href={href}>
     <slot></slot>
 </a>

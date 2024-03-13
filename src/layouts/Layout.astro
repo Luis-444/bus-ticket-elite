@@ -18,13 +18,13 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body class="dark:bg-gray-800 bg-secondary flex flex-col h-screen">
-		<header class="w-full flex justify-center bg-primary py-10">
-			<picture class="w-full max-w-[500px] h-auto flex items-center justify-cent">
+		<header class="w-full flex justify-center bg-primary-hover py-10">
+			<picture class="w-full max-w-[500px] h-auto flex items-center justify-center px-10">
 				<img class="w-full h-auto object-cover" src="/public/imgs/UtmLogo.png" alt="Banner Ut Matamoros" />
 			</picture>
 		</header>
 		<ProfileMenu client:load/>
-		<div class="flex-1 flex justify-center items-center">
+		<div class="flex-1 flex justify-center items-center p-10">
 			<slot />
 		</div>
 	</body>

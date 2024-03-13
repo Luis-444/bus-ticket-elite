@@ -32,8 +32,7 @@ export default function Form() {
       total: total
     })
       .then(res => {
-        setFolio(res.data.folio);
-        console.log(res);
+        window.location.href = '/view_purchases';
       })
       .catch(err => {
         console.log(err);
@@ -90,9 +89,6 @@ export default function Form() {
         <a className='w-full md:w-auto' href="/">
           <Button color='red' className='w-full md:w-auto'>Regresar</Button>
         </a>
-      </div>
-      <div className="mb-2 block">
-        {folio ? <QRCode value={folio} size={200} /> : null}
       </div>
     </div>
   );
