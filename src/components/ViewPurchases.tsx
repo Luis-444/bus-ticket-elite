@@ -46,7 +46,6 @@ export default function ViewPurchases() {
                 res.data.forEach(purchase => {
                     purchase.deadline = new Date(purchase.deadline).toLocaleString();
                 });
-
                 setPurchases(res.data);
                 console.log(res.data);
             })
