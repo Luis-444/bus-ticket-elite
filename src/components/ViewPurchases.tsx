@@ -41,7 +41,7 @@ export default function ViewPurchases() {
     }
 
     useEffect(() => {
-        axios.get<Purchase[]>('http://localhost:3000/api/purchases')
+        axiosClient.get<Purchase[]>('purchases')
             .then(res => {
                 res.data.forEach(purchase => {
                     purchase.deadline = new Date(purchase.deadline).toLocaleString();
@@ -67,7 +67,7 @@ export default function ViewPurchases() {
                         <QRCode value={purchase.folio.toString()} style={{ width: '100%', height: 'auto' }}/>
                     </div>
                     <p className='flex justify-between h-10 items-center gap-2 px-2'>
-                        <p className='font-bold'>Caducidad: {new Date(purchase.deadline).toDateString()}</p>
+                        <span className='font-bold'>Caducidad: { purchase.deadline.split(',')[0] }</span>
                         <span className='bg-green-500 text-secondary rounded-full px-4 py-1'>Usos <span className='font-bold'>{purchase.quantity}</span></span>
                     </p>
                 </div>
@@ -82,7 +82,7 @@ export default function ViewPurchases() {
                                     <QRCode value={p.folio.toString()} size={150} />
                                 </div>
                                 <p className='flex justify-between h-10 items-center gap-2 px-2'>
-                                    <p className='font-bold'>Caducidad: {new Date(p.deadline).toDateString()}</p>
+                                    <span className='font-bold'>Caducidad: { p.deadline.split(',')[0] }</span>
                                     <span className='bg-green-500 text-secondary rounded-full px-4 py-1'>Usos <span className='font-bold'>{p.quantity}</span></span>
                                 </p>
                             </div>

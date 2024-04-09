@@ -4,6 +4,7 @@ import { Button } from 'flowbite-react';
 import { useState } from 'react';
 import axios from 'axios';
 import QRCode from 'qrcode.react';
+import axiosClient from '../axiosClient';
 
 export default function Form() {
 
@@ -24,7 +25,7 @@ export default function Form() {
   const [folio, setFolio] = useState('');
 
   const savePurchase = () => {
-    axios.post('http://localhost:3000/api/purchases', {
+    axiosClient.post('purchases', {
       deadline: deadline,
       city: city,
       price: price,
