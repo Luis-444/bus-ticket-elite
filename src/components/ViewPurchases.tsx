@@ -18,7 +18,7 @@ export default function ViewPurchases() {
     const [purchases, setPurchases] = useState<Purchase[]>([]);
     const [show, setShow] = useState(false);
     const [purchase, setPurchase] = useState<Purchase>({
-        _id: 0,
+        id: 0,
         deadline: '',
         city: '',
         price: 0,
@@ -57,7 +57,7 @@ export default function ViewPurchases() {
     return (
         <Fragment>
             {show ? (
-                <div className='w-full min-w-[350px] shadow-xl rounded-md relative bg-white overflow-hidden' key={purchase._id}>
+                <div className='w-full min-w-[350px] shadow-xl rounded-md relative bg-white overflow-hidden' key={purchase.id}>
                     <h2 className='bg-primary-hover w-full text-secondary text-center font-bold px-2 py-1 relative flex items-center justify-center'>
                         <span>{purchase.city.length ? purchase.city : "Sin ciudad"}</span>
                         <XCircleIcon className='absolute hover:scale-105 right-0 cursor-pointer w-6 mx-2' onClick={e => setShow(false)} />
