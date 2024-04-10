@@ -11,7 +11,13 @@ import CvvInput from './CvvInput';
 import CardNumberInput from './CardNumberInput';
 
 export default function AddCardForm() {
-    const [user, setUser] = useState({ username: '' });
+    const [user, setUser] = useState({
+        id: 0,
+        username: '',
+        email: '',
+        password: '',
+        token: ''
+    });
 
     const [expDate, setExpDate] = useState<string>('');
     const [cvv, setCvv] = useState<string>('');
@@ -44,7 +50,7 @@ export default function AddCardForm() {
         }
         axiosClient.post('cards', data).then(response => {
             if (!response.data.error) {
-                window.location.href = '/';
+                window.location.href = '/purchase';
             }
             else {
                 console.error(response.data.message);
@@ -55,7 +61,7 @@ export default function AddCardForm() {
 
     return (
         <section className='w-full max-w-[500px] p-2'>
-            <h2 className='text-center'>Bienvenido <span className='font-medium'>{user.username}</span>. Añade una nueva tarjeta para continuar</h2>
+            <h2 className='text-center'>Bienvenido <span className='font-medium'>{user.name}</span>. Añade una nueva tarjeta para continuar</h2>
             <hr className='my-3' />
             <div className='grid gap-2 grid-cols-1 md:grid-cols-12'>
                 <CardNumberInput onCardNumberChange={handleCardNumberChange} />
