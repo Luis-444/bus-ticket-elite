@@ -1,6 +1,12 @@
 export default function checkUser() {
-    console.log('checkUser');
-    const user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null;
+    interface User {
+        id: number;
+        name: string;
+        email: string;
+        password: string;
+    }
+
+    const user = localStorage.getItem('user');
     if (!user) {
         window.location.href = '/login';
     }

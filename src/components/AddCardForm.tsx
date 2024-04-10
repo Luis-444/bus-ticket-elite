@@ -13,7 +13,7 @@ import CardNumberInput from './CardNumberInput';
 export default function AddCardForm() {
     const [user, setUser] = useState({
         id: 0,
-        username: '',
+        name: '',
         email: '',
         password: '',
         token: ''

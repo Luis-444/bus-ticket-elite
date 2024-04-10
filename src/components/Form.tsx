@@ -11,7 +11,7 @@ interface Card {
   expDate: string;
   cvv: string;
   cardNumber: string;
-  user_id: string;
+  userid: string;
 }
 
 export default function Form() {
@@ -159,7 +159,7 @@ export default function Form() {
           <div className="flex gap-2 items-center">
             <Select
               className="flex-1"
-              id="card_id"
+              id="cardid"
               required
               value={cardId}
               onChange={(e) => setCardId(Number(e.target.value))}
