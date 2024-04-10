@@ -1,13 +1,13 @@
 ---
 import LoginForm from '../components/LoginForm';
-import Layout from '../layouts/Layout.astro';
+import Guest from '../layouts/Guest.astro';
 ---
 
-<Layout title="Login">
+<Guest title="Login">
   <section class="h-screen w-screen flex justify-center items-center">
     <div class="w-full max-w-lg">
       <h1 class="my-2 text-3xl font-medium text-center">Bus Ticket Elite</h1>
       <LoginForm client:load/>
     </div>
   </section>
-</Layout>
+</Guest>

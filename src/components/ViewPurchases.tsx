@@ -5,7 +5,7 @@ import { Fragment } from 'react';
 import { XCircleIcon } from '@heroicons/react/24/outline';
 import axiosClient from '../axiosClient';
 interface Purchase {
-    _id: number;
+    id: number;
     deadline: string;
     city: string;
     price: number;
@@ -75,7 +75,7 @@ export default function ViewPurchases() {
                 (
                     <div  className=' w-full max-w-[1440px] flex justify-center flex-wrap gap-4'>
                         {purchases.map(p => (
-                            <div onClick={ e => openPurchase(p)} className=' hover:scale-95 cursor-pointer w-[350px] min-w-[350px] shadow-xl rounded-md relative bg-white overflow-hidden' key={p._id}>
+                            <div onClick={ e => openPurchase(p)} className=' hover:scale-95 cursor-pointer w-[350px] min-w-[350px] shadow-xl rounded-md relative bg-white overflow-hidden' key={p.id}>
                                 <h2 className='bg-primary-hover w-full text-secondary text-center font-bold px-2 py-1'>{p.city.length ? p.city : "Sin ciudad"}</h2>
                                 <div className='flex justify-center my-4'>
                                     <QRCode value={p.folio.toString()} size={150} />
