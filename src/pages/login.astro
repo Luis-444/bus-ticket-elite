@@ -1,12 +1,16 @@
 ---
 import LoginForm from '../components/LoginForm';
 import Guest from '../layouts/Guest.astro';
+import { Image } from 'astro:assets';
+import banner from '../images/UtmLogo.png';
 ---
 
 <Guest title="Login">
   <section class="h-screen w-screen flex justify-center items-center">
     <div class="w-full max-w-lg">
-      <h1 class="my-2 text-3xl font-medium text-center">Bus Ticket Elite</h1>
+      <picture class="w-full max-w-[500px] h-auto flex items-center justify-center px-10">
+				<Image class="w-full h-auto object-cover" src={banner} alt="Banner Ut Matamoros"/>
+			</picture>
       <LoginForm client:load/>
     </div>
   </section>
