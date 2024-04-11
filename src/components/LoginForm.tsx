@@ -47,7 +47,6 @@ export default function LoginForm() {
       <div className='flex justify-center items-center'>
         <Button onClick={handleLogin} color="dark">Iniciar sesion</Button>
       </div>
-      <a href="/register" className='w-full text-center underline text-blue-400'>No tengo cuenta</a>
     </form>
   );
 }
